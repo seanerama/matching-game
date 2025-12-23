@@ -1,0 +1,22 @@
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 4), 1fr);
+  gap: 12px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .game-board {
+    gap: 8px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-board {
+    gap: 6px;
+    padding: 8px;
+  }
+}

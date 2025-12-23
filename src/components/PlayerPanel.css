@@ -1,0 +1,74 @@
+.player-panel {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.player-card.active {
+  border-color: var(--player-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.player-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--player-color);
+  transition: transform 0.3s ease;
+}
+
+.player-card.active .player-indicator {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--player-color);
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.player-score {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+@media (max-width: 600px) {
+  .player-panel {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .player-card {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .player-name {
+    font-size: 0.85rem;
+  }
+
+  .player-score {
+    font-size: 0.75rem;
+  }
+}
