@@ -1,9 +1,11 @@
 .card {
   width: 100%;
+  min-height: 150px;
   aspect-ratio: 1696 / 2528;
   perspective: 1000px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  border: 2px solid red; /* DEBUG */
 }
 
 .card:hover:not(.flipped):not(.matched) {
