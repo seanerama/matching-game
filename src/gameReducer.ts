@@ -11,7 +11,12 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 function createCards(selectedDeckIds: string[], pairCount: number): Card[] {
+  console.log('createCards called with:', { selectedDeckIds, pairCount });
+  console.log('Available decks:', decks.map(d => d.id));
+
   const selectedDecks = decks.filter(d => selectedDeckIds.includes(d.id));
+  console.log('Filtered decks:', selectedDecks.length);
+
   const deckCount = selectedDecks.length;
 
   // Calculate how many pairs per deck (equal distribution)
@@ -45,6 +50,7 @@ function createCards(selectedDeckIds: string[], pairCount: number): Card[] {
     });
   });
 
+  console.log('Created cards:', cards.length);
   return shuffleArray(cards);
 }
 
