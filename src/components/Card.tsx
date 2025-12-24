@@ -35,10 +35,6 @@ export function Card({ card, onClick, disabled }: CardProps) {
               target.parentElement!.classList.add('placeholder');
             }}
           />
-          <div className="card-label">
-            <span className="child-name">{card.childName}</span>
-            <span className="profession-name">{card.professionName}</span>
-          </div>
         </div>
       </div>
     </div>
