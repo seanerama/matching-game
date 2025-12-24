@@ -29,10 +29,7 @@ export function Card({ card, onClick, disabled }: CardProps) {
           <img
             src={card.image}
             alt={`${card.childName} as ${card.professionName}`}
-            onLoad={() => console.log('Image loaded:', card.image)}
             onError={(e) => {
-              // Fallback for missing images
-              console.error('Image failed to load:', card.image);
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
               target.parentElement!.classList.add('placeholder');

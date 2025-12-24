@@ -47,26 +47,11 @@ export function GameBoard() {
   else if (cardCount <= 40) columns = 8;
   else columns = 10;
 
-  if (state.cards.length === 0) {
-    return (
-      <div style={{ padding: '40px', textAlign: 'center', color: '#666' }}>
-        <p>No cards found. Debug info:</p>
-        <p>Selected decks: {JSON.stringify(state.selectedDecks)}</p>
-        <p>Pair count: {state.pairCount}</p>
-      </div>
-    );
-  }
-
-  console.log('Rendering GameBoard with', state.cards.length, 'cards');
-
   return (
     <div
       className="game-board"
       style={{ '--columns': columns } as React.CSSProperties}
     >
-      <p style={{ gridColumn: '1 / -1', color: 'red', margin: '10px' }}>
-        DEBUG: Rendering {state.cards.length} cards
-      </p>
       {state.cards.map(card => (
         <Card
           key={card.id}
