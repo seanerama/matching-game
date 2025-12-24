@@ -8,11 +8,12 @@ export function SetupScreen() {
   const { dispatch } = useGame();
   const [playerCount, setPlayerCount] = useState(1);
   const [playerNames, setPlayerNames] = useState(defaultPlayerNames);
-  const [selectedDecks, setSelectedDecks] = useState<string[]>(['finley', 'evelyn', 'maya']);
+  const [selectedDecks, setSelectedDecks] = useState<string[]>(['finley', 'evie', 'maya']);
   const [pairCount, setPairCount] = useState(6);
 
-  const maxPairs = selectedDecks.length * 10;
-  const minPairs = Math.min(6, maxPairs);
+  // Each deck has 5 professions (mythical only for now)
+  const maxPairs = selectedDecks.length * 5;
+  const minPairs = Math.min(3, maxPairs);
 
   // Generate valid pair counts (multiples of selected deck count for equal distribution)
   const validPairCounts: number[] = [];
@@ -26,9 +27,9 @@ export function SetupScreen() {
         if (prev.length === 1) return prev; // Must have at least one deck
         const newDecks = prev.filter(id => id !== deckId);
         // Adjust pair count if it's now too high
-        const newMax = newDecks.length * 10;
+        const newMax = newDecks.length * 5;
         if (pairCount > newMax) {
-          setPairCount(Math.max(6, newMax));
+          setPairCount(Math.max(3, newMax));
         }
         return newDecks;
       }
