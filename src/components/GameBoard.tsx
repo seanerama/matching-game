@@ -57,11 +57,16 @@ export function GameBoard() {
     );
   }
 
+  console.log('Rendering GameBoard with', state.cards.length, 'cards');
+
   return (
     <div
       className="game-board"
       style={{ '--columns': columns } as React.CSSProperties}
     >
+      <p style={{ gridColumn: '1 / -1', color: 'red', margin: '10px' }}>
+        DEBUG: Rendering {state.cards.length} cards
+      </p>
       {state.cards.map(card => (
         <Card
           key={card.id}
